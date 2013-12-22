@@ -1,0 +1,12 @@
+{
+  "name": "kirkas-ascensor",
+  "private": true,
+  "dependencies": {
+    "modernizr": "latest",
+    "jquery": "latest",
+    "requirejs": "latest",
+    "normalize.scss" : "latest",
+    "html5shiv" : "latest"
+  },
+  "devDependencies": {}
+}

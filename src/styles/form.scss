@@ -1,0 +1,95 @@
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+
+@mixin form-shadow($color) {
+  &:focus {
+    @include box-shadow(0 0 2px 2px rgba(darken($color, 10%), 0.3));
+  }
+}
+
+@mixin form-theme($color){
+  border: 1px solid $color;
+  color: $color;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    @include rem(font-size, 1);
+}
+
+input, textarea {
+  @include rem(padding, 0.5);
+  border-radius: $radius;
+  border: 1px solid #aaa;
+  width: 100%;
+  outline:none;
+  
+  @include rem(margin-bottom, 0.5);
+  &:last-child {margin-bottom: 0;}
+  
+  @include placeholder {
+    font-style: italic;
+  }
+  
+  &:focus {
+    @include form-shadow($blue);
+    border: 1px solid $blue;
+  }
+  
+  &.error {
+    @include form-shadow($red);
+    @include form-theme($red);
+    @include placeholder {
+      color: rgba($red, 0.6);
+    }
+  }
+  
+  &.success {
+    @include form-shadow($green);
+    @include form-theme($green);
+    @include placeholder {
+      color: rgba($green, 0.6);
+    }
+  }
+  
+  &.warning {
+    @include form-shadow($orange);
+    @include form-theme($orange);
+    @include placeholder {
+      color: rgba($orange, 0.6);
+    }
+  }
+  
+  &:disabled, .disabled {
+    border: 1px solid #bbb;
+    color: #999;
+    @include placeholder {
+      color: rgba(#999, 0.6);
+    }
+  }
+}
+
+.inline-input{
+  @include rem(margin-bottom, 0.5);
+  &:last-child {margin-bottom: 0;}
+
+  button,
+  input,
+  label,
+  select,
+  textarea {
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+    @include rem(margin-right, 0.5);
+    &:last-child {margin-right: 0;}
+  }
+}

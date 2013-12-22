@@ -1,0 +1,88 @@
+@mixin button($color, $text) {
+  background: $color;
+  color: $text;
+  border: 1px darken($color, 10%) solid;
+  
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+  
+  &:active {
+    background-color: darken($color, 15%);
+  }
+  
+  &:focus, &.focus {
+    box-shadow: 0 0 2px 2px rgba(darken($color, 10%), 0.3);
+  }
+
+  &:disabled, .disabled {
+    color: rgba($text, 0.4);
+    background: $color!important;
+  }
+}
+
+button, .button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  padding: none;
+  background: none;
+  outline:none;
+  cursor: pointer;
+  border-radius: $radius;
+  
+  &:disabled, .disabled {
+    cursor: default;
+  }
+  
+  @include rem(font-size, 1);
+  @include rem(padding, 0.5, 1);
+  
+  &.tiny {
+    @include rem(font-size, 0.6);
+    @include rem(padding, 0.3, 0.6);
+  }
+  
+  &.small {
+    @include rem(font-size, 0.8);
+    @include rem(padding, 0.4, 0.8);
+  }
+  
+  &.large {
+    @include rem(font-size, 1.2);
+    @include rem(padding, 0.6, 1.2);
+  }
+  
+  @include button($blue, $white);
+  
+  &.green {
+    @include button($green, $white);
+  }
+  
+  &.yellow {
+    @include button($yellow, $white);
+  }
+  
+  &.orange {
+    @include button($orange, $white);
+  }
+  
+  &.red {
+    @include button($red, $white);
+  }
+  
+  &.grey {
+    @include button($grey, $black);
+  }
+  
+  &.black {
+    @include button($black, $white);
+  }
+  
+  &.white {
+    @include button($white, $black);
+  }
+  
+}
+
+

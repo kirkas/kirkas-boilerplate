@@ -1,0 +1,46 @@
+@import "reset";
+@import "variables";
+@import "mixin";
+@import "grid";
+@import "form";
+@import "type";
+@import "button";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+  font-smooth:always;
+  -webkit-font-smoothing:antialiased;
+}
+
+
+body {
+  background: #eee;
+}
+
+
+.block-content {
+  padding: $spacing/2;
+  background: #ddd;
+  border-radius: $radius;
+}
+
+.row {
+  margin-bottom: $spacing;
+}
+
+iframe {
+  width: 100%;
+  border: 1px solid #aaa;
+  border-radius: $radius;
+  width: 320px;
+  height: 480px; 
+}
+
+.clearfix {
+  @include clearfix();
+}
