@@ -41,3 +41,4 @@ Thumbs.db
 /dist/
 /node_modules/
 /src/components/
+/.sass-cache/
