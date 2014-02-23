@@ -1,0 +1,32 @@
+<section id="helper">
+	<h2>Helpers &amp; selector <small>Damn</small></h2>
+	<h5><em>@include rem($property, $rem-value)</em></h5>
+	<p>Use to calcul anything in rem:</p>
+	<pre class="prettyprint lang-sass">@include rem(margin-right: 1);</pre>
+	<h5><em>@include font-size($rem-value)</em></h5>
+	<p>Font size calcul use:</p>
+	<pre class="prettyprint lang-sass">@include font-size(2);</pre>
+	<h5><em>@include clearfix()</em></h5>
+	<p>Quite self-explained innit?</p>
+	<pre class="prettyprint lang-sass">@include clearfix();</pre>
+	<h5><em>@include grid-row()</em></h5>
+	<p>Quite self-explained innit?</p>
+	<pre class="prettyprint lang-sass">@include grid-row();</pre>
+	<h5><em>@include grid-columns($columns, $offset, $mobile, $center, $gutter)</em></h5>
+	<p>Quite self-explained innit?</p>
+	<pre class="prettyprint lang-sass">@include grid-columns($columns: 3, $offset: false, $mobile:6, $center:true, $gutter:false);</pre>
+	<h5><em>@include responde-to($screen-size)</em></h5>
+	<p>Quite self-explained innit?</p>
+	<pre class="prettyprint lang-sass">@include responde-to(handhelds) { ... }</pre>
+	<h5><em>$text-input</em></h5>
+	<p>Select all input that look like a textbox</p>
+	<pre class="prettyprint lang-sass">#{$text-input} { ... }</pre>
+	<h5><em>$button-input</em></h5>
+	<p>Select all button tag (button or input)</p>
+	<pre class="prettyprint lang-sass">#{$button-input} { ... }</pre>
+	<h5><em>$heading-tag</em></h5>
+	<p>Select all heading, from h1 to h6</p>
+	<pre class="prettyprint lang-sass">
+// h1, h2, h3, h4, h5, h6 { ... }
+#{$heading-tag} { ... }</pre>
+</section>

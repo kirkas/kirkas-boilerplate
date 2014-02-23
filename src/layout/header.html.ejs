@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title><%= pageTitle %></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="main-style" href="styles/main.css" rel="stylesheet" type="text/css">
+		<script src="scripts/lib/modernizr.js"></script>
+		<script>
+			/* Change css file if no support of rem. (grunt ref: Modernizr.css_remunit) */
+			if(!Modernizr.cssremunit) {
+				var style = document.getElementById("main-style");
+				style.setAttribute("href", "styles/main-no-rem.css");
+			}
+		</script>
+	</head>
+	<body class="<%= bodyClass %>">

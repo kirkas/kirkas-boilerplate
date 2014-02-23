@@ -1,0 +1,73 @@
+<section id="type">
+	<h2>Type <small>em is dead, long life to (r)em</small></h2>
+	<p>All the fonts and other UI element are base on a <a href="#">rem system</a> with a fallback to the px stylesheet in case rem is not supported (IE8 / opera mobile).</p>
+	<div class="twelve block">
+	<%
+		var typeExample = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "pre", "small", "a", "big", "strong", "em", "blockquote"]; 
+		for(var i=0; i<typeExample.length; i++) { 
+			var tag = typeExample[i];
+	%>
+	<div  class="two block mobile-two tag-title">
+		<<%= tag %>><%= tag %></<%= tag %>>
+	</div>
+	<div  class="ten block mobile-ten">
+		<<%= tag %>>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</<%= tag %>>
+	</div>
+	<% } %>
+	</div>
+	<p>Use the build in font-size mixin:</p>
+	<p>The mixin ask one argument (font-size) but a second argument can be specified (line-height)  <strong>font-size</strong> &amp; <strong>line-height</strong></code></p>
+	<p><em>Example :</em></p>
+	<div class="four block">
+		<pre class="prettyprint lang-sass">
+// Sass
+.paragraphe-bigger {
+  @include font-size(1.2);
+  // font-size
+}</pre>
+	</div>
+
+	<div class="four block">
+		<pre class="prettyprint lang-sass">
+// main.css
+.default-line-height {
+  font-size: 1.2rem;
+  line-height: 1.92rem;
+}</pre>
+	</div>
+
+	<div class="four block">
+		<pre class="prettyprint lang-sass">
+// main-no-rem.css
+.default-line-height {
+  font-size: 19.2px;
+  line-height: 26.8px;
+}</pre>
+	</div>
+
+	<div class="four block">
+	<pre class="prettyprint lang-sass">
+// sass
+.same-line-height {
+  @include font-size(1.2, 1.2);
+  // font-size and line-height
+}</pre>
+	</div>
+
+	<div class="four block">
+		<pre class="prettyprint lang-sass">
+// main.css
+.same-line-height {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}</pre>
+	</div>
+	<div class="four block">
+			<pre class="prettyprint lang-sass">
+// main-no-rem.css
+.same-line-height {
+  font-size: 19.2px; 
+  line-height: 19.2px;
+}</pre>
+	</div>
+</section>

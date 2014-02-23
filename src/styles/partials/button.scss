@@ -1,0 +1,92 @@
+button, .button, #{$button-input} {
+  padding: 0;
+  border: none;
+  padding: none;
+  background: none;
+  outline:none;
+  cursor: pointer;
+  border-radius: $radius;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  
+  &:disabled, .disabled {
+    cursor: default;
+  }
+  
+  @include font-size(1, 1);
+  @include rem(padding, 0.5, 1);
+  
+  &.tiny {
+    @include font-size(0.6, 0.6);
+    @include rem(padding, 0.3, 0.6);
+  }
+  
+  &.small {
+    @include font-size(0.8, 0.8);
+    @include rem(padding, 0.4, 0.8);
+  }
+  
+  &.large {
+    @include font-size(1.2, 1.2);
+    @include rem(padding, 0.6, 1.2);
+  }
+  
+  &.full-width {
+    width: 100%;
+  }
+  
+  @include button();
+  
+  &.green {
+    @include button($green, $white);
+  }
+  
+  &.yellow {
+    @include button($yellow, $black);
+  }
+  
+  &.orange {
+    @include button($orange, $white);
+  }
+  
+  &.red {
+    @include button($red, $white);
+  }
+  
+  &.grey {
+    @include button($grey, $black);
+  }
+  
+  &.black {
+    @include button($black, $white);
+  }
+  
+  &.white {
+    @include button($white, $black);
+  } 
+}
+
+.buttons-group {
+  button, .button {
+    border-radius: 0;
+    float:left;
+    margin: 0;
+    margin-left: -1px;
+    
+    &.selected {
+      font-weight: bold;
+    }
+    
+    &:last-child {
+      border-top-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+    }
+    
+    &:first-child {
+      margin-left: 0;
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+  }
+}

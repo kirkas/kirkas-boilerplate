@@ -1,0 +1,25 @@
+<section id="button">
+	<h2>Button <small>Nothing fancy</small></h2>
+	<p>I believe button are a important part of a website identity, in that concept, i've created an extremly simple mixin for button (no gradient or shadow), which cover all state &amp; size and just wait for you to play around.</p>
+	<p>There is 8 colors in the _variables.scss file, which i use to create those 8 button style:</p>
+	<%
+		var buttonExample = ["primary", "green", "yellow", "orange", "red", "black", "white", "grey"]; 
+		for(var i=0; i<buttonExample.length; i++) { 
+		var className = buttonExample[i]; 
+	%>
+		
+		<div class="three block button-demo-container">
+			<h5><%= className %></h5>
+			<button class="<%= className %> button tiny">Button tiny</button>
+			<button class="<%= className %> button small">Button small</button>
+			<button class="<%= className %> button medium">Button medium</button>
+			<button class="<%= className %> button large">Button large</button>
+			<button class="<%= className %> button " disabled="">Button disabled</button>
+			<button class="<%= className %> button full-width">Button full width</button>
+		</div>
+	<% } %>
+	<p>You can use the build-in mixin to create your own button style:</p>
+	<pre class="prettyprint lang-sass">
+@include button(); // Default to $primary-color, which default to $blue
+@include button($color, $text-color); // Default to $primary-color, which default to blue</pre>
+</section>

@@ -1,0 +1,36 @@
+/* Colors */
+$white: 										#fefefe;
+$black: 										#121212;
+$grey: 											#eeeeee;
+$blue: 											#3498db;
+$green: 										#2ecc71;
+$yellow: 										#FFD927;
+$orange: 										#f39c12;
+$red: 											#e74c3c;
+
+/* Identity */
+$primary-color:							$blue;
+
+/* UI */
+$radius: 										3px;
+
+/* Fonts */
+$base-font-size:						16px;
+$line-height:				1.61803398875;
+$text-font-family: 				"Helvetica Neue", Arial, Helvetica, sans-serif;
+$title-font-family: 				"Helvetica Neue", Arial, Helvetica, sans-serif;
+$monospace-font-family: 		Menlo, Consolas, Monaco, "Lucida Console", monospace;
+
+/* Grid */
+$grid-width:              1200px;
+$gutter-width:            12px;
+$columns-number:          12;
+$columns-number-string:   "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve";
+
+/* Media query */
+$break-small:             760px;
+$break-large:             $grid-width;
+
+/* Animation settings */
+$transition-time:         0.3s;
+$transition-easing:       ease-in-out;

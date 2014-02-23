@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Demo page</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="main-style" href="styles/main.css" rel="stylesheet" type="text/css">
+		<script src="scripts/lib/modernizr.js"></script>
+		<script>
+			/* Change css file if no support of rem. (grunt ref: Modernizr.css_remunit) */
+			if(!Modernizr.cssremunit) {
+				var style = document.getElementById("main-style");
+				style.setAttribute("href", "styles/main-no-rem.css");
+			}
+		</script>
+	</head>
+	<body class="demo">
+<div class="row">
+	<div class="hide-for-small two block">
+		<div id="demo-navigation">
+			<h2>Doc</h2>
+<nav>
+	<ul>
+		<li>Intro</li>
+		<li>UI</li>
+		<li><a href="#type">Type</a></li>
+		<li><a href="#grid">Grid</a></li>
+		<li><a href="#form">Form</a></li>
+		<li><a href="#button">Button</a></li>
+		<li>Tools</li>
+		<li><a href="#variables">Variables</a></li>
+		<li><a href="#media">Media query</a></li>
+		<li><a href="#mixin">Mixin</a></li>
+		<li><a href="#reset">Helpers &amp; selector</a></li>
+		<li>Concept</li>
+		<li><a href="#spacing">Spacing</a></li>
+		<li><a href="#tips">Tips</a></li>		
+	</ul>
+</nav>
+
+		</div>
+		&nbsp;
+	</div>
+	<div class="ten block">
+		<div id="demo-content">
+			<h2>Introduction</h2>
+<p>I've been building different kind of website for quite a long time now, and i've seen myself having similar routine. Thinking about form and button, firefox and IE8, make sure grunt handle of every task possible.</p>
+<p>This is what i use as a very basic boilerplate for all my project. Simple logicisare already set in place (grid, media query, UI element) but the code is extremly simple &amp; maleable. Build, server and templating task are present and let me start a new project instantly.</p>
+<p>This is a concept-free boilerplate, good for webapp, blog, forum or any other kind of website. That's one of the reason why the <strong>spacing</strong> is separated in is own file. (webapp think about spacing differently that classical website).</p>
+<p>Another main concept is the use of <strong>rem</strong> (main.css) with a <strong>fallback to px</strong> (main-no-rem.css) for non-supportive browser. Using rem system (with help of the rem build-in mixin) assure a consistant layout around all the site. try to change the body font-size and you'll see that everything is responding to that unique value</p>
+<div class="inline-input">
+	<label for="font-experiment-range">body font-size</label>
+	<input id="font-experiment-range" value="16" type="range" min="10" max="20">
+	<small id="actual-font-size">16px</small>
+</div>
+<p>test</p>
+
+<button>See project on github</button>
+			
+			<section id="type">
+	<h2>Type <small>em is dead, long life to (r)em</small></h2>
+	<p>All the fonts and other UI element are base on a <a href="#">rem system</a> with a fallback to the px stylesheet in case rem is not supported (IE8 / opera mobile).</p>
+	<div class="twelve block">
+	
+	<div  class="two block mobile-two tag-title">
+		<h1>h1</h1>
+	</div>
+	<div  class="ten block mobile-ten">
+		<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</h1>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<h2>h2</h2>
+	</div>
+	<div  class="ten block mobile-ten">
+		<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</h2>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<h3>h3</h3>
+	</div>
+	<div  class="ten block mobile-ten">
+		<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</h3>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<h4>h4</h4>
+	</div>
+	<div  class="ten block mobile-ten">
+		<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</h4>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<h5>h5</h5>
+	</div>
+	<div  class="ten block mobile-ten">
+		<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</h5>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<h6>h6</h6>
+	</div>
+	<div  class="ten block mobile-ten">
+		<h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</h6>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<p>p</p>
+	</div>
+	<div  class="ten block mobile-ten">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</p>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<pre>pre</pre>
+	</div>
+	<div  class="ten block mobile-ten">
+		<pre>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</pre>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<small>small</small>
+	</div>
+	<div  class="ten block mobile-ten">
+		<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</small>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<a>a</a>
+	</div>
+	<div  class="ten block mobile-ten">
+		<a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</a>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<big>big</big>
+	</div>
+	<div  class="ten block mobile-ten">
+		<big>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</big>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<strong>strong</strong>
+	</div>
+	<div  class="ten block mobile-ten">
+		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</strong>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<em>em</em>
+	</div>
+	<div  class="ten block mobile-ten">
+		<em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</em>
+	</div>
+	
+	<div  class="two block mobile-two tag-title">
+		<blockquote>blockquote</blockquote>
+	</div>
+	<div  class="ten block mobile-ten">
+		<blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis imperdiet erat, at mollis lorem.</blockquote>
+	</div>
+	
+	</div>
+	<p>Use the build in font-size mixin:</p>
+	<p>The mixin ask one argument (font-size) but a second argument can be specified (line-height)  <strong>font-size</strong> &amp; <strong>line-height</strong></code></p>
+	<p><em>Example :</em></p>
+	<div class="four block">
+		<pre class="prettyprint lang-sass">
+// Sass
+.paragraphe-bigger {
+  @include font-size(1.2);
+  // font-size
+}</pre>
+	</div>
+
+	<div class="four block">
+		<pre class="prettyprint lang-sass">
+// main.css
+.default-line-height {
+  font-size: 1.2rem;
+  line-height: 1.92rem;
+}</pre>
+	</div>
+
+	<div class="four block">
+		<pre class="prettyprint lang-sass">
+// main-no-rem.css
+.default-line-height {
+  font-size: 19.2px;
+  line-height: 26.8px;
+}</pre>
+	</div>
+
+	<div class="four block">
+	<pre class="prettyprint lang-sass">
+// sass
+.same-line-height {
+  @include font-size(1.2, 1.2);
+  // font-size and line-height
+}</pre>
+	</div>
+
+	<div class="four block">
+		<pre class="prettyprint lang-sass">
+// main.css
+.same-line-height {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}</pre>
+	</div>
+	<div class="four block">
+			<pre class="prettyprint lang-sass">
+// main-no-rem.css
+.same-line-height {
+  font-size: 19.2px; 
+  line-height: 19.2px;
+}</pre>
+	</div>
+</section>
+			<section id="grid" class="grid-example">
+	<h2>Grid <small> Fluid &amp; Responsive</small></h2>
+	<p>Simple and yet fully customizable, you choose the number of columns, grid witdh, gutter &amp; even the class naming!</p>
+	<p>Simple doesn't mean feature-less, the grid have what every grid should have, offset, mobile class, center and gutter helper.</p>
+	<div class="buttons-group clearfix" id="grid-button">
+		<button class="grey selected">grid</button>
+		<button class="grey">offset</button>
+		<button class="grey">center</button>
+		<button class="grey">gutter</button>
+		<button class="grey">mobile</button>
+	</div>
+	
+	<div id="grid-wrapper">
+		<div id="grid-slider">
+			<div class="grid-slide">
+				<div class="row">
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.two" class="block two">
+<div class="block-content" data-hover="block.two">two</div>
+</div>
+<div data-hover="block.two" class="block two">
+<div class="block-content" data-hover="block.two">two</div>
+</div>
+<div data-hover="block.two" class="block two">
+<div class="block-content" data-hover="block.two">two</div>
+</div>
+<div data-hover="block.two" class="block two">
+<div class="block-content" data-hover="block.two">two</div>
+</div>
+<div data-hover="block.two" class="block two">
+<div class="block-content" data-hover="block.two">two</div>
+</div>
+<div data-hover="block.two" class="block two">
+<div class="block-content" data-hover="block.two">two</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.three" class="block three">
+<div class="block-content" data-hover="block.three">three</div>
+</div>
+<div data-hover="block.three" class="block three">
+<div class="block-content" data-hover="block.three">three</div>
+</div>
+<div data-hover="block.three" class="block three">
+<div class="block-content" data-hover="block.three">three</div>
+</div>
+<div data-hover="block.three" class="block three">
+<div class="block-content" data-hover="block.three">three</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.four" class="block four">
+<div class="block-content" data-hover="block.four">four</div>
+</div>
+<div data-hover="block.four" class="block four">
+<div class="block-content" data-hover="block.four">four</div>
+</div>
+<div data-hover="block.four" class="block four">
+<div class="block-content" data-hover="block.four">four</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.five" class="block five">
+<div class="block-content" data-hover="block.five">five</div>
+</div>
+<div data-hover="block.five" class="block five">
+<div class="block-content" data-hover="block.five">five</div>
+</div>
+<div data-hover="block.two" class="block two">
+<div class="block-content" data-hover="block.two">two</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.six" class="block six">
+<div class="block-content" data-hover="block.six">six</div>
+</div>
+<div data-hover="block.six" class="block six">
+<div class="block-content" data-hover="block.six">six</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.seven" class="block seven">
+<div class="block-content" data-hover="block.seven">seven</div>
+</div>
+<div data-hover="block.five" class="block five">
+<div class="block-content" data-hover="block.five">five</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.eight" class="block eight">
+<div class="block-content" data-hover="block.eight">eight</div>
+</div>
+<div data-hover="block.four" class="block four">
+<div class="block-content" data-hover="block.four">four</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.nine" class="block nine">
+<div class="block-content" data-hover="block.nine">nine</div>
+</div>
+<div data-hover="block.three" class="block three">
+<div class="block-content" data-hover="block.three">three</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.ten" class="block ten">
+<div class="block-content" data-hover="block.ten">ten</div>
+</div>
+<div data-hover="block.two" class="block two">
+<div class="block-content" data-hover="block.two">two</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.eleven" class="block eleven">
+<div class="block-content" data-hover="block.eleven">eleven</div>
+</div>
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.twelve" class="block twelve">
+<div class="block-content" data-hover="block.twelve">twelve</div>
+</div>
+</div>
+
+			</div>
+			<div class="grid-slide">
+				<div class="row">
+<div data-hover="block.one.offset-by-eleven" class="block one offset-by-eleven">
+<div class="block-content" data-hover="block.one.offset-by-eleven">one offset-by-eleven</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.two.offset-by-ten" class="block two offset-by-ten">
+<div class="block-content" data-hover="block.two.offset-by-ten">two offset-by-ten</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.three.offset-by-nine" class="block three offset-by-nine">
+<div class="block-content" data-hover="block.three.offset-by-nine">three offset-by-nine</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.four.offset-by-eight" class="block four offset-by-eight">
+<div class="block-content" data-hover="block.four.offset-by-eight">four offset-by-eight</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.five.offset-by-seven" class="block five offset-by-seven">
+<div class="block-content" data-hover="block.five.offset-by-seven">five offset-by-seven</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.six.offset-by-six" class="block six offset-by-six">
+<div class="block-content" data-hover="block.six.offset-by-six">six offset-by-six</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.seven.offset-by-five" class="block seven offset-by-five">
+<div class="block-content" data-hover="block.seven.offset-by-five">seven offset-by-five</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.eight.offset-by-four" class="block eight offset-by-four">
+<div class="block-content" data-hover="block.eight.offset-by-four">eight offset-by-four</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.nine.offset-by-three" class="block nine offset-by-three">
+<div class="block-content" data-hover="block.nine.offset-by-three">nine offset-by-three</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.ten.offset-by-two" class="block ten offset-by-two">
+<div class="block-content" data-hover="block.ten.offset-by-two">ten offset-by-two</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.eleven.offset-by-one" class="block eleven offset-by-one">
+<div class="block-content" data-hover="block.eleven.offset-by-one">eleven offset-by-one</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.twelve" class="block twelve">
+<div class="block-content" data-hover="block.twelve">twelve</div>
+</div>
+</div>
+
+			</div>
+			<div class="grid-slide">
+				<div class="row">
+<div data-hover="block.one.centered" class="block one centered">
+<div class="block-content" data-hover="block.one.centered">one centered</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.two.centered" class="block two centered">
+<div class="block-content" data-hover="block.two.centered">two centered</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.three.centered" class="block three centered">
+<div class="block-content" data-hover="block.three.centered">three centered</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.four.centered" class="block four centered">
+<div class="block-content" data-hover="block.four.centered">four centered</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.five.centered" class="block five centered">
+<div class="block-content" data-hover="block.five.centered">five centered</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.six.centered" class="block six centered">
+<div class="block-content" data-hover="block.six.centered">six centered</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.seven.centered" class="block seven centered">
+<div class="block-content" data-hover="block.seven.centered">seven centered</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.eight.centered" class="block eight centered">
+<div class="block-content" data-hover="block.eight.centered">eight centered</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.nine.centered" class="block nine centered">
+<div class="block-content" data-hover="block.nine.centered">nine centered</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.ten.centered" class="block ten centered">
+<div class="block-content" data-hover="block.ten.centered">ten centered</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.eleven.centered" class="block eleven centered">
+<div class="block-content" data-hover="block.eleven.centered">eleven centered</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.twelve.centered" class="block twelve centered">
+<div class="block-content" data-hover="block.twelve.centered">twelve centered</div>
+</div>
+</div>
+
+			</div>
+			<div class="grid-slide">
+				<div class="row">
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.two.no-gutter" class="block two no-gutter">
+<div class="block-content" data-hover="block.two.no-gutter">two no-gutter</div>
+</div>
+<div data-hover="block.two.no-gutter" class="block two no-gutter">
+<div class="block-content" data-hover="block.two.no-gutter">two no-gutter</div>
+</div>
+<div data-hover="block.two.no-gutter" class="block two no-gutter">
+<div class="block-content" data-hover="block.two.no-gutter">two no-gutter</div>
+</div>
+<div data-hover="block.two.no-gutter" class="block two no-gutter">
+<div class="block-content" data-hover="block.two.no-gutter">two no-gutter</div>
+</div>
+<div data-hover="block.two.no-gutter" class="block two no-gutter">
+<div class="block-content" data-hover="block.two.no-gutter">two no-gutter</div>
+</div>
+<div data-hover="block.two.no-gutter" class="block two no-gutter">
+<div class="block-content" data-hover="block.two.no-gutter">two no-gutter</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.three.no-gutter" class="block three no-gutter">
+<div class="block-content" data-hover="block.three.no-gutter">three no-gutter</div>
+</div>
+<div data-hover="block.three.no-gutter" class="block three no-gutter">
+<div class="block-content" data-hover="block.three.no-gutter">three no-gutter</div>
+</div>
+<div data-hover="block.three.no-gutter" class="block three no-gutter">
+<div class="block-content" data-hover="block.three.no-gutter">three no-gutter</div>
+</div>
+<div data-hover="block.three.no-gutter" class="block three no-gutter">
+<div class="block-content" data-hover="block.three.no-gutter">three no-gutter</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.four.no-gutter" class="block four no-gutter">
+<div class="block-content" data-hover="block.four.no-gutter">four no-gutter</div>
+</div>
+<div data-hover="block.four.no-gutter" class="block four no-gutter">
+<div class="block-content" data-hover="block.four.no-gutter">four no-gutter</div>
+</div>
+<div data-hover="block.four.no-gutter" class="block four no-gutter">
+<div class="block-content" data-hover="block.four.no-gutter">four no-gutter</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.five.no-gutter" class="block five no-gutter">
+<div class="block-content" data-hover="block.five.no-gutter">five no-gutter</div>
+</div>
+<div data-hover="block.five.no-gutter" class="block five no-gutter">
+<div class="block-content" data-hover="block.five.no-gutter">five no-gutter</div>
+</div>
+<div data-hover="block.two.no-gutter" class="block two no-gutter">
+<div class="block-content" data-hover="block.two.no-gutter">two no-gutter</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.six.no-gutter" class="block six no-gutter">
+<div class="block-content" data-hover="block.six.no-gutter">six no-gutter</div>
+</div>
+<div data-hover="block.six.no-gutter" class="block six no-gutter">
+<div class="block-content" data-hover="block.six.no-gutter">six no-gutter</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.seven.no-gutter" class="block seven no-gutter">
+<div class="block-content" data-hover="block.seven.no-gutter">seven no-gutter</div>
+</div>
+<div data-hover="block.five.no-gutter" class="block five no-gutter">
+<div class="block-content" data-hover="block.five.no-gutter">five no-gutter</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.eight.no-gutter" class="block eight no-gutter">
+<div class="block-content" data-hover="block.eight.no-gutter">eight no-gutter</div>
+</div>
+<div data-hover="block.four.no-gutter" class="block four no-gutter">
+<div class="block-content" data-hover="block.four.no-gutter">four no-gutter</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.nine.no-gutter" class="block nine no-gutter">
+<div class="block-content" data-hover="block.nine.no-gutter">nine no-gutter</div>
+</div>
+<div data-hover="block.three.no-gutter" class="block three no-gutter">
+<div class="block-content" data-hover="block.three.no-gutter">three no-gutter</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.ten.no-gutter" class="block ten no-gutter">
+<div class="block-content" data-hover="block.ten.no-gutter">ten no-gutter</div>
+</div>
+<div data-hover="block.two.no-gutter" class="block two no-gutter">
+<div class="block-content" data-hover="block.two.no-gutter">two no-gutter</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.eleven.no-gutter" class="block eleven no-gutter">
+<div class="block-content" data-hover="block.eleven.no-gutter">eleven no-gutter</div>
+</div>
+<div data-hover="block.one.no-gutter" class="block one no-gutter">
+<div class="block-content" data-hover="block.one.no-gutter">one no-gutter</div>
+</div>
+</div>
+
+				<div class="row">
+<div data-hover="block.twelve.no-gutter" class="block twelve no-gutter">
+<div class="block-content" data-hover="block.twelve.no-gutter">twelve no-gutter</div>
+</div>
+</div>
+
+			</div>
+			<div class="grid-slide">
+				<div class="six block">
+					<p>Default behavior on mobile</p>
+					<iframe id='mobile-one'></iframe>
+					<div style="display:none;" id="iframe-mobile-one-content">
+						<div class="grid-example">
+							<div class="row">
+<div data-hover="block.one" class="block one">
+<div class="block-content" data-hover="block.one">one</div>
+</div>
+<div data-hover="block.two" class="block two">
+<div class="block-content" data-hover="block.two">two</div>
+</div>
+<div data-hover="block.three" class="block three">
+<div class="block-content" data-hover="block.three">three</div>
+</div>
+<div data-hover="block.four" class="block four">
+<div class="block-content" data-hover="block.four">four</div>
+</div>
+<div data-hover="block.five" class="block five">
+<div class="block-content" data-hover="block.five">five</div>
+</div>
+<div data-hover="block.six" class="block six">
+<div class="block-content" data-hover="block.six">six</div>
+</div>
+<div data-hover="block.seven" class="block seven">
+<div class="block-content" data-hover="block.seven">seven</div>
+</div>
+<div data-hover="block.eight" class="block eight">
+<div class="block-content" data-hover="block.eight">eight</div>
+</div>
+<div data-hover="block.nine" class="block nine">
+<div class="block-content" data-hover="block.nine">nine</div>
+</div>
+<div data-hover="block.ten" class="block ten">
+<div class="block-content" data-hover="block.ten">ten</div>
+</div>
+<div data-hover="block.eleven" class="block eleven">
+<div class="block-content" data-hover="block.eleven">eleven</div>
+</div>
+<div data-hover="block.twelve" class="block twelve">
+<div class="block-content" data-hover="block.twelve">twelve</div>
+</div>
+</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="six block">
+					<p>with mobile class</p>
+					<iframe id='mobile-two'></iframe>
+					<div style="display:none;" id="iframe-mobile-two-content">
+						<div class="grid-example">
+							<div class="row">
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+</div>
+
+							<div class="row">
+<div data-hover="block.mobile-two" class="block mobile-two">
+<div class="block-content" data-hover="block.mobile-two">mobile-two</div>
+</div>
+<div data-hover="block.mobile-two" class="block mobile-two">
+<div class="block-content" data-hover="block.mobile-two">mobile-two</div>
+</div>
+<div data-hover="block.mobile-two" class="block mobile-two">
+<div class="block-content" data-hover="block.mobile-two">mobile-two</div>
+</div>
+<div data-hover="block.mobile-two" class="block mobile-two">
+<div class="block-content" data-hover="block.mobile-two">mobile-two</div>
+</div>
+<div data-hover="block.mobile-two" class="block mobile-two">
+<div class="block-content" data-hover="block.mobile-two">mobile-two</div>
+</div>
+<div data-hover="block.mobile-two" class="block mobile-two">
+<div class="block-content" data-hover="block.mobile-two">mobile-two</div>
+</div>
+</div>
+
+							<div class="row">
+<div data-hover="block.mobile-three" class="block mobile-three">
+<div class="block-content" data-hover="block.mobile-three">mobile-three</div>
+</div>
+<div data-hover="block.mobile-three" class="block mobile-three">
+<div class="block-content" data-hover="block.mobile-three">mobile-three</div>
+</div>
+<div data-hover="block.mobile-three" class="block mobile-three">
+<div class="block-content" data-hover="block.mobile-three">mobile-three</div>
+</div>
+<div data-hover="block.mobile-three" class="block mobile-three">
+<div class="block-content" data-hover="block.mobile-three">mobile-three</div>
+</div>
+</div>
+
+							<div class="row">
+<div data-hover="block.mobile-four" class="block mobile-four">
+<div class="block-content" data-hover="block.mobile-four">mobile-four</div>
+</div>
+<div data-hover="block.mobile-four" class="block mobile-four">
+<div class="block-content" data-hover="block.mobile-four">mobile-four</div>
+</div>
+<div data-hover="block.mobile-four" class="block mobile-four">
+<div class="block-content" data-hover="block.mobile-four">mobile-four</div>
+</div>
+</div>
+
+							<div class="row">
+<div data-hover="block.mobile-five" class="block mobile-five">
+<div class="block-content" data-hover="block.mobile-five">mobile-five</div>
+</div>
+<div data-hover="block.mobile-five" class="block mobile-five">
+<div class="block-content" data-hover="block.mobile-five">mobile-five</div>
+</div>
+<div data-hover="block.mobile-two" class="block mobile-two">
+<div class="block-content" data-hover="block.mobile-two">mobile-two</div>
+</div>
+</div>
+
+							<div class="row">
+<div data-hover="block.mobile-six" class="block mobile-six">
+<div class="block-content" data-hover="block.mobile-six">mobile-six</div>
+</div>
+<div data-hover="block.mobile-six" class="block mobile-six">
+<div class="block-content" data-hover="block.mobile-six">mobile-six</div>
+</div>
+</div>
+
+							<div class="row">
+<div data-hover="block.mobile-seven" class="block mobile-seven">
+<div class="block-content" data-hover="block.mobile-seven">mobile-seven</div>
+</div>
+<div data-hover="block.mobile-five" class="block mobile-five">
+<div class="block-content" data-hover="block.mobile-five">mobile-five</div>
+</div>
+</div>
+
+							<div class="row">
+<div data-hover="block.mobile-eight" class="block mobile-eight">
+<div class="block-content" data-hover="block.mobile-eight">mobile-eight</div>
+</div>
+<div data-hover="block.mobile-four" class="block mobile-four">
+<div class="block-content" data-hover="block.mobile-four">mobile-four</div>
+</div>
+</div>
+
+							<div class="row">
+<div data-hover="block.mobile-nine" class="block mobile-nine">
+<div class="block-content" data-hover="block.mobile-nine">mobile-nine</div>
+</div>
+<div data-hover="block.mobile-three" class="block mobile-three">
+<div class="block-content" data-hover="block.mobile-three">mobile-three</div>
+</div>
+</div>
+
+							<div class="row">
+<div data-hover="block.mobile-ten" class="block mobile-ten">
+<div class="block-content" data-hover="block.mobile-ten">mobile-ten</div>
+</div>
+<div data-hover="block.mobile-two" class="block mobile-two">
+<div class="block-content" data-hover="block.mobile-two">mobile-two</div>
+</div>
+</div>
+
+							<div class="row">
+<div data-hover="block.mobile-eleven" class="block mobile-eleven">
+<div class="block-content" data-hover="block.mobile-eleven">mobile-eleven</div>
+</div>
+<div data-hover="block.mobile-one" class="block mobile-one">
+<div class="block-content" data-hover="block.mobile-one">mobile-one</div>
+</div>
+</div>
+
+							<div class="row">
+<div data-hover="block.mobile-twelve" class="block mobile-twelve">
+<div class="block-content" data-hover="block.mobile-twelve">mobile-twelve</div>
+</div>
+</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p>To change your grid system, change those line in the _variable.scss file:</p>
+	<pre class="prettyprint lang-sass">
+/* Grid settings */
+$grid-width:             1080px;
+$gutter-width:           12px;
+$columns-number:         12;
+$columns-number-string:  "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve";</pre>
+	<p>You can also use the sass build in mixin for your layout:</p>
+	<pre class="prettyprint lang-sass">
+@include grid-row();
+@include grid-columns($columns:3, $offset:2, $mobile:6);</pre>
+</section>
+			<section id="form">
+	<h2>Form <small>Dammit, flat design</small></h2>
+	<p>As the button, form are a complex part of web user experience, you'll love flat but your grandmother will find it hard to recognize.</p>
+	<p>As always, the sass for those cover all input type &amp; state, and just wait for you to drop the shadow bomb.</p>
+	<div class="three block">
+		
+			<label> input</label>
+			<input type="text" placeholder=" placeholder" class="" />
+		
+			<label>error input</label>
+			<input type="text" placeholder="error placeholder" class="error" />
+		
+			<label>success input</label>
+			<input type="text" placeholder="success placeholder" class="success" />
+		
+			<label>warning input</label>
+			<input type="text" placeholder="warning placeholder" class="warning" />
+		
+	</div>
+	<div class="three block">
+		<label for="textarea">textarea</label>
+		<textarea placeholder="textarea"></textarea>
+		<label><input type="checkbox" value="checkbox input"/> Checkbox input</label>
+		<label><input type="radio" value="radio input"/> Radio input</label>
+	</div>
+	<div class="six block">
+		<label for="">Inline form</label>
+		<div class="inline-input">
+			<input type="text" placeholder="text input" />
+			<input type="radio"/><label for="one">one</label>
+			<input type="radio"/><label for="two">two</label>
+			<select>
+				<option>option1</option>
+				<option>option2</option>
+			</select>
+			<input type="submit"/>
+		</div>
+	</div>
+</section>
+
+			<section id="button">
+	<h2>Button <small>Nothing fancy</small></h2>
+	<p>I believe button are a important part of a website identity, in that concept, i've created an extremly simple mixin for button (no gradient or shadow), which cover all state &amp; size and just wait for you to play around.</p>
+	<p>There is 8 colors in the _variables.scss file, which i use to create those 8 button style:</p>
+	
+		
+		<div class="three block button-demo-container">
+			<h5>primary</h5>
+			<button class="primary button tiny">Button tiny</button>
+			<button class="primary button small">Button small</button>
+			<button class="primary button medium">Button medium</button>
+			<button class="primary button large">Button large</button>
+			<button class="primary button " disabled="">Button disabled</button>
+			<button class="primary button full-width">Button full width</button>
+		</div>
+	
+		
+		<div class="three block button-demo-container">
+			<h5>green</h5>
+			<button class="green button tiny">Button tiny</button>
+			<button class="green button small">Button small</button>
+			<button class="green button medium">Button medium</button>
+			<button class="green button large">Button large</button>
+			<button class="green button " disabled="">Button disabled</button>
+			<button class="green button full-width">Button full width</button>
+		</div>
+	
+		
+		<div class="three block button-demo-container">
+			<h5>yellow</h5>
+			<button class="yellow button tiny">Button tiny</button>
+			<button class="yellow button small">Button small</button>
+			<button class="yellow button medium">Button medium</button>
+			<button class="yellow button large">Button large</button>
+			<button class="yellow button " disabled="">Button disabled</button>
+			<button class="yellow button full-width">Button full width</button>
+		</div>
+	
+		
+		<div class="three block button-demo-container">
+			<h5>orange</h5>
+			<button class="orange button tiny">Button tiny</button>
+			<button class="orange button small">Button small</button>
+			<button class="orange button medium">Button medium</button>
+			<button class="orange button large">Button large</button>
+			<button class="orange button " disabled="">Button disabled</button>
+			<button class="orange button full-width">Button full width</button>
+		</div>
+	
+		
+		<div class="three block button-demo-container">
+			<h5>red</h5>
+			<button class="red button tiny">Button tiny</button>
+			<button class="red button small">Button small</button>
+			<button class="red button medium">Button medium</button>
+			<button class="red button large">Button large</button>
+			<button class="red button " disabled="">Button disabled</button>
+			<button class="red button full-width">Button full width</button>
+		</div>
+	
+		
+		<div class="three block button-demo-container">
+			<h5>black</h5>
+			<button class="black button tiny">Button tiny</button>
+			<button class="black button small">Button small</button>
+			<button class="black button medium">Button medium</button>
+			<button class="black button large">Button large</button>
+			<button class="black button " disabled="">Button disabled</button>
+			<button class="black button full-width">Button full width</button>
+		</div>
+	
+		
+		<div class="three block button-demo-container">
+			<h5>white</h5>
+			<button class="white button tiny">Button tiny</button>
+			<button class="white button small">Button small</button>
+			<button class="white button medium">Button medium</button>
+			<button class="white button large">Button large</button>
+			<button class="white button " disabled="">Button disabled</button>
+			<button class="white button full-width">Button full width</button>
+		</div>
+	
+		
+		<div class="three block button-demo-container">
+			<h5>grey</h5>
+			<button class="grey button tiny">Button tiny</button>
+			<button class="grey button small">Button small</button>
+			<button class="grey button medium">Button medium</button>
+			<button class="grey button large">Button large</button>
+			<button class="grey button " disabled="">Button disabled</button>
+			<button class="grey button full-width">Button full width</button>
+		</div>
+	
+	<p>You can use the build-in mixin to create your own button style:</p>
+	<pre class="prettyprint lang-sass">
+@include button(); // Default to $primary-color, which default to $blue
+@include button($color, $text-color); // Default to $primary-color, which default to blue</pre>
+</section>
+			
+			<section id="variables">
+	<h2>Variable <small>The first thing you should look at</small></h2>
+	<p>Every element is linked somehow to that file, it contain default font size &amp; family, grid width, columns number or even columns name. A good practice is to be sure you've got control of your css, and that's by blab lballb a soe consistency toe bla.</p>
+	<p>Start by playing around your base font size and the line height (default to golden ratio).</p>
+	<pre class="prettyprint lang-sass">
+$base-font-size:	16px;
+$line-height: 	1.61803398875; // Golden ratio</pre>
+</section>
+			<section id="mixin">
+	<h2>Mixin <small>To infinite and beyond!</small></h2>
+</section>
+			<section id="helper">
+	<h2>Helpers &amp; selector <small>Damn</small></h2>
+	<h5><em>@include rem($property, $rem-value)</em></h5>
+	<p>Use to calcul anything in rem:</p>
+	<pre class="prettyprint lang-sass">@include rem(margin-right: 1);</pre>
+	<h5><em>@include font-size($rem-value)</em></h5>
+	<p>Font size calcul use:</p>
+	<pre class="prettyprint lang-sass">@include font-size(2);</pre>
+	<h5><em>@include clearfix()</em></h5>
+	<p>Quite self-explained innit?</p>
+	<pre class="prettyprint lang-sass">@include clearfix();</pre>
+	<h5><em>@include grid-row()</em></h5>
+	<p>Quite self-explained innit?</p>
+	<pre class="prettyprint lang-sass">@include grid-row();</pre>
+	<h5><em>@include grid-columns($columns, $offset, $mobile, $center, $gutter)</em></h5>
+	<p>Quite self-explained innit?</p>
+	<pre class="prettyprint lang-sass">@include grid-columns($columns: 3, $offset: false, $mobile:6, $center:true, $gutter:false);</pre>
+	<h5><em>@include responde-to($screen-size)</em></h5>
+	<p>Quite self-explained innit?</p>
+	<pre class="prettyprint lang-sass">@include responde-to(handhelds) { ... }</pre>
+	<h5><em>$text-input</em></h5>
+	<p>Select all input that look like a textbox</p>
+	<pre class="prettyprint lang-sass">#{$text-input} { ... }</pre>
+	<h5><em>$button-input</em></h5>
+	<p>Select all button tag (button or input)</p>
+	<pre class="prettyprint lang-sass">#{$button-input} { ... }</pre>
+	<h5><em>$heading-tag</em></h5>
+	<p>Select all heading, from h1 to h6</p>
+	<pre class="prettyprint lang-sass">
+// h1, h2, h3, h4, h5, h6 { ... }
+#{$heading-tag} { ... }</pre>
+</section>
+			<section id="media">
+	<h2>Media query <small>- helper &amp; mixin</small></h2>
+	<p>There is two breakpoint, <strong>$break-small</strong> and <strong>$break-break-large</strong>, they default to 760px and 1080 (the grid width). Helper class contain <strong>hide-for-small</strong>, <strong>hide-for-mediuml</strong> and <strong>hide-for-large</strong>.</p>
+	<div class="four block">
+		<small>The content above will disapear on small screen</small>
+		<blockquote class="hide-for-small">hide on small</blockquote>
+	</div>
+	<div class="four block">
+		<small>The content above will disapear on medium screen</small>
+		<blockquote class="hide-for-medium">hide on medium</blockquote>
+	</div>
+	<div class="four block">
+		<small>The content above will disapear on large screen</small>
+		<blockquote class="hide-for-large">hide on large</blockquote>
+	</div>
+	<div class="twelve block">
+		<p>Change breakpoint settings by editing the file _variable.scss:</p>
+		<pre class="prettyprint lang-sass">
+$break-small: 760px;
+$break-large: $grid-width; //default: 1080px;</pre>
+		<p>You can use the build in media query mixin:</p>
+		<pre class="prettyprint lang-sass">
+@include respond-to(handhelds) { ... }
+@include respond-to(medium-screens) { ... }
+@include respond-to(large-screens) { ... }
+@media only screen and (min-width: 1200px) {
+  .hide-for-large {
+    display: none;
+  }
+}</pre>
+	</div>
+</section>
+			
+			<section id="spacing">
+	<h2>Spacing <small>To infinite and beyond!</small></h2>
+</section>
+			<section id="tips">
+	<h2>Tips <small>Good pratice is the key</small></h2>
+	<h5>1. rem that mofo</h5>
+	<p>Since all the css is based around rem, I strongly advice to use the rem mixin when it comes to margin or padding calculation. This will ensure a uniform spacing on all the website and make that the px fallback will be present. The mixin ask two argument, <strong>property</strong> &amp; <strong>rem value</strong></code></p>
+	<p><em>Example :</em></p>
+<div class="four block">
+	<pre class="prettyprint lang-sass">
+// sass
+#navigation {
+  @include rem(margin-bottom, 2);
+}	
+</pre>
+</div>
+<div class="four block">
+	<pre class="prettyprint lang-sass">
+// main.css
+#navigation {
+  margin-bottom: 1rem;
+}	
+</pre>
+</div>
+<div class="four block">
+	<pre class="prettyprint lang-sass">
+// main-no-rem.css
+#navigation {
+  margin-bottom: 16px;
+}	
+</pre>
+</div>
+</section>
+		</div>
+	</div>
+</div>
+<script>var currentPage = "demo";</script>
+		<script data-main="scripts/main" src="components/requirejs/require.js"></script>
+	</body>
+</html>

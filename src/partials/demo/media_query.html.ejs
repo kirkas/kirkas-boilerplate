@@ -1,0 +1,32 @@
+<section id="media">
+	<h2>Media query <small>- helper &amp; mixin</small></h2>
+	<p>There is two breakpoint, <strong>$break-small</strong> and <strong>$break-break-large</strong>, they default to 760px and 1080 (the grid width). Helper class contain <strong>hide-for-small</strong>, <strong>hide-for-mediuml</strong> and <strong>hide-for-large</strong>.</p>
+	<div class="four block">
+		<small>The content above will disapear on small screen</small>
+		<blockquote class="hide-for-small">hide on small</blockquote>
+	</div>
+	<div class="four block">
+		<small>The content above will disapear on medium screen</small>
+		<blockquote class="hide-for-medium">hide on medium</blockquote>
+	</div>
+	<div class="four block">
+		<small>The content above will disapear on large screen</small>
+		<blockquote class="hide-for-large">hide on large</blockquote>
+	</div>
+	<div class="twelve block">
+		<p>Change breakpoint settings by editing the file _variable.scss:</p>
+		<pre class="prettyprint lang-sass">
+$break-small: 760px;
+$break-large: $grid-width; //default: 1080px;</pre>
+		<p>You can use the build in media query mixin:</p>
+		<pre class="prettyprint lang-sass">
+@include respond-to(handhelds) { ... }
+@include respond-to(medium-screens) { ... }
+@include respond-to(large-screens) { ... }
+@media only screen and (min-width: 1200px) {
+  .hide-for-large {
+    display: none;
+  }
+}</pre>
+	</div>
+</section>

@@ -1,0 +1,127 @@
+<section id="grid" class="grid-example">
+	<h2>Grid <small> Fluid &amp; Responsive</small></h2>
+	<p>Simple and yet fully customizable, you choose the number of columns, grid witdh, gutter &amp; even the class naming!</p>
+	<p>Simple doesn't mean feature-less, the grid have what every grid should have, offset, mobile class, center and gutter helper.</p>
+	<div class="buttons-group clearfix" id="grid-button">
+		<button class="grey selected">grid</button>
+		<button class="grey">offset</button>
+		<button class="grey">center</button>
+		<button class="grey">gutter</button>
+		<button class="grey">mobile</button>
+	</div>
+	<%
+	function buildGrid(gridArray) {
+		var $container = '<div class="row">\n';
+		for(var i=0; i<gridArray.length; i++) {
+			var hoverText = gridArray[i].replace(/ /g, ".");
+			$container+= '<div data-hover="block.' + hoverText + '" class="block ' + gridArray[i] + '">\n'
+			$container+= '<div class="block-content" data-hover="block.' + hoverText + '">' + gridArray[i] + '</div>\n';
+			$container+= '</div>\n';
+		};
+		$container+= '</div>\n';
+		return $container;
+	}
+	%>
+	<div id="grid-wrapper">
+		<div id="grid-slider">
+			<div class="grid-slide">
+				<%- buildGrid(["one", "one", "one", "one", "one", "one", "one", "one", "one", "one", "one", "one"]) %>
+				<%- buildGrid(["two", "two", "two", "two", "two", "two"]) %>
+				<%- buildGrid(["three", "three", "three", "three"]) %>
+				<%- buildGrid(["four", "four", "four"]) %>
+				<%- buildGrid(["five", "five", "two"]) %>
+				<%- buildGrid(["six", "six"]) %>
+				<%- buildGrid(["seven", "five"]) %>
+				<%- buildGrid(["eight", "four"]) %>
+				<%- buildGrid(["nine", "three"]) %>
+				<%- buildGrid(["ten", "two"]) %>
+				<%- buildGrid(["eleven", "one"]) %>
+				<%- buildGrid(["twelve"]) %>
+			</div>
+			<div class="grid-slide">
+				<%- buildGrid(["one offset-by-eleven"]) %>
+				<%- buildGrid(["two offset-by-ten"]) %>
+				<%- buildGrid(["three offset-by-nine"]) %>
+				<%- buildGrid(["four offset-by-eight"]) %>
+				<%- buildGrid(["five offset-by-seven"]) %>
+				<%- buildGrid(["six offset-by-six"]) %>
+				<%- buildGrid(["seven offset-by-five"]) %>
+				<%- buildGrid(["eight offset-by-four"]) %>
+				<%- buildGrid(["nine offset-by-three"]) %>
+				<%- buildGrid(["ten offset-by-two"]) %>
+				<%- buildGrid(["eleven offset-by-one"]) %>
+				<%- buildGrid(["twelve"]) %>
+			</div>
+			<div class="grid-slide">
+				<%- buildGrid(["one centered"]) %>
+				<%- buildGrid(["two centered"]) %>
+				<%- buildGrid(["three centered"]) %>
+				<%- buildGrid(["four centered"]) %>
+				<%- buildGrid(["five centered"]) %>
+				<%- buildGrid(["six centered"]) %>
+				<%- buildGrid(["seven centered"]) %>
+				<%- buildGrid(["eight centered"]) %>
+				<%- buildGrid(["nine centered"]) %>
+				<%- buildGrid(["ten centered"]) %>
+				<%- buildGrid(["eleven centered"]) %>
+				<%- buildGrid(["twelve centered"]) %>
+			</div>
+			<div class="grid-slide">
+				<%- buildGrid(["one no-gutter", "one no-gutter", "one no-gutter", "one no-gutter", "one no-gutter", "one no-gutter", "one no-gutter", "one no-gutter", "one no-gutter", "one no-gutter", "one no-gutter", "one no-gutter"]) %>
+				<%- buildGrid(["two no-gutter", "two no-gutter", "two no-gutter", "two no-gutter", "two no-gutter", "two no-gutter"]) %>
+				<%- buildGrid(["three no-gutter", "three no-gutter", "three no-gutter", "three no-gutter"]) %>
+				<%- buildGrid(["four no-gutter", "four no-gutter", "four no-gutter"]) %>
+				<%- buildGrid(["five no-gutter", "five no-gutter", "two no-gutter"]) %>
+				<%- buildGrid(["six no-gutter", "six no-gutter"]) %>
+				<%- buildGrid(["seven no-gutter", "five no-gutter"]) %>
+				<%- buildGrid(["eight no-gutter", "four no-gutter"]) %>
+				<%- buildGrid(["nine no-gutter", "three no-gutter"]) %>
+				<%- buildGrid(["ten no-gutter", "two no-gutter"]) %>
+				<%- buildGrid(["eleven no-gutter", "one no-gutter"]) %>
+				<%- buildGrid(["twelve no-gutter"]) %>
+			</div>
+			<div class="grid-slide">
+				<div class="six block">
+					<p>Default behavior on mobile</p>
+					<iframe id='mobile-one'></iframe>
+					<div style="display:none;" id="iframe-mobile-one-content">
+						<div class="grid-example">
+							<%- buildGrid(["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"]) %>
+						</div>
+					</div>
+				</div>
+				<div class="six block">
+					<p>with mobile class</p>
+					<iframe id='mobile-two'></iframe>
+					<div style="display:none;" id="iframe-mobile-two-content">
+						<div class="grid-example">
+							<%- buildGrid(["mobile-one", "mobile-one", "mobile-one", "mobile-one", "mobile-one", "mobile-one", "mobile-one", "mobile-one", "mobile-one", "mobile-one", "mobile-one", "mobile-one"]) %>
+							<%- buildGrid(["mobile-two", "mobile-two", "mobile-two", "mobile-two", "mobile-two", "mobile-two"]) %>
+							<%- buildGrid(["mobile-three", "mobile-three", "mobile-three", "mobile-three"]) %>
+							<%- buildGrid(["mobile-four", "mobile-four", "mobile-four"]) %>
+							<%- buildGrid(["mobile-five", "mobile-five", "mobile-two"]) %>
+							<%- buildGrid(["mobile-six", "mobile-six"]) %>
+							<%- buildGrid(["mobile-seven", "mobile-five"]) %>
+							<%- buildGrid(["mobile-eight", "mobile-four"]) %>
+							<%- buildGrid(["mobile-nine", "mobile-three"]) %>
+							<%- buildGrid(["mobile-ten", "mobile-two"]) %>
+							<%- buildGrid(["mobile-eleven", "mobile-one"]) %>
+							<%- buildGrid(["mobile-twelve"]) %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p>To change your grid system, change those line in the _variable.scss file:</p>
+	<pre class="prettyprint lang-sass">
+/* Grid settings */
+$grid-width:             1080px;
+$gutter-width:           12px;
+$columns-number:         12;
+$columns-number-string:  "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve";</pre>
+	<p>You can also use the sass build in mixin for your layout:</p>
+	<pre class="prettyprint lang-sass">
+@include grid-row();
+@include grid-columns($columns:3, $offset:2, $mobile:6);</pre>
+</section>

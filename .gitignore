@@ -42,3 +42,4 @@ Thumbs.db
 /node_modules/
 /src/components/
 /.sass-cache/
+/src/styles/main-no-rem.css

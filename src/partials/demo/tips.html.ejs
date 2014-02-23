@@ -1,0 +1,30 @@
+<section id="tips">
+	<h2>Tips <small>Good pratice is the key</small></h2>
+	<h5>1. rem that mofo</h5>
+	<p>Since all the css is based around rem, I strongly advice to use the rem mixin when it comes to margin or padding calculation. This will ensure a uniform spacing on all the website and make that the px fallback will be present. The mixin ask two argument, <strong>property</strong> &amp; <strong>rem value</strong></code></p>
+	<p><em>Example :</em></p>
+<div class="four block">
+	<pre class="prettyprint lang-sass">
+// sass
+#navigation {
+  @include rem(margin-bottom, 2);
+}	
+</pre>
+</div>
+<div class="four block">
+	<pre class="prettyprint lang-sass">
+// main.css
+#navigation {
+  margin-bottom: 1rem;
+}	
+</pre>
+</div>
+<div class="four block">
+	<pre class="prettyprint lang-sass">
+// main-no-rem.css
+#navigation {
+  margin-bottom: 16px;
+}	
+</pre>
+</div>
+</section>

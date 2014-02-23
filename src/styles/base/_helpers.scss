@@ -1,0 +1,35 @@
+/* Display helper */
+.hide {
+	display: none;
+}
+
+.hide-for-small {
+	@include respond-to(handhelds) { display: none; }
+}
+
+.hide-for-medium {
+	@include respond-to(medium-screens) { display: none; }
+}
+
+.hide-for-large {
+	@include respond-to(wide-screens) { display: none; }
+}
+
+
+/* Display helper */
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+
+.pretty-code {
+	font-family: $monospace-font-family;
+	background: $black;
+	color: $white;
+	@include rem(padding, 0.5, 1);
+	border-radius: $radius;
+}
+
+/* Fix */
+.clearfix {
+	@include clearfix();
+}

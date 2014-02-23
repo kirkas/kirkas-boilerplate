@@ -1,46 +1,261 @@
-@import "reset";
-@import "variables";
-@import "mixin";
-@import "grid";
-@import "form";
-@import "type";
-@import "button";
+@import "base/reset";
+@import "base/variables";
+@import "base/mixin";
+@import "base/helpers";
 
-* {
-  margin: 0;
-  padding: 0;
-}
+@import "partials/grid";
+@import "partials/form";
+@import "partials/link";
+@import "partials/button";
+@import "partials/type";
+@import "partials/spacing";
 
 *, *:before, *:after {
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-  font-smooth:always;
-  -webkit-font-smoothing:antialiased;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	font-smooth:always;
+	-webkit-font-smoothing:antialiased;
 }
 
-
-body {
-  background: #eee;
-}
-
-
-.block-content {
-  padding: $spacing/2;
-  background: #ddd;
-  border-radius: $radius;
-}
-
-.row {
-  margin-bottom: $spacing;
+.home-bullet-point{
+	li:before {
+		content: " ☞ ";
+		@include font-size(1.2);
+	}
 }
 
 iframe {
-  width: 100%;
-  border: 1px solid #aaa;
-  border-radius: $radius;
-  width: 320px;
-  height: 480px; 
+	width: 100%;
+	border: 1px solid #aaa;
+	border-radius: $radius;
+	height: 480px; 
 }
 
 .clearfix {
-  @include clearfix();
+	@include clearfix();
 }
+
+#button {
+	.button {
+		display: block;
+	}
+	.button-demo-container{
+		@include rem(margin-top, 1);
+	}
+}
+
+section {
+	@include clearfix();
+}
+
+.tag-title {
+	text-align: right;
+}
+
+html, body {
+	height: 100%;
+}
+
+
+.grid-example {
+	.block {
+		position: relative;
+		&:hover {
+			&:after {
+				content: attr(data-hover);
+				position: absolute;
+				border: 100%;
+				background: $black;
+				top: 9px;
+				right: 6px;
+				white-space: nowrap;
+				width: auto;
+				@include rem(padding, 0.2, 0.4);
+				@include font-size(0.7);
+				border-bottom-left-radius: $radius;
+
+				color: $grey;
+			}
+		}
+		.block-content {
+			background: #ddd;
+			border-radius: $radius;
+			@include rem(font-size, 0.8);
+			@include rem(margin-top, 0.5);
+			@include rem(margin-bottom, 0.5);
+			text-align: center;
+			border: 1px solid #aaa;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+}
+
+$slide: 5;
+#grid-wrapper{
+	overflow: hidden;
+	#grid-slider {
+		position: relative;
+		width: 100%*$slide;
+		.grid-slide {
+			width: 100%/$slide;
+			float: left;
+		}
+	}
+}
+.demo {
+	h2 {
+		small {
+			color: #999;
+			&:before {
+				content: " - "
+			}
+		}
+	}
+
+	#demo-navigation {
+		position: fixed;
+height: 100%;
+overflow: scroll;
+width: inherit;
+max-width: 188px;
+	}
+}
+
+
+
+/* Tomorrow Theme */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* Pretty printing styles. Used with prettify.js. */
+/* SPAN elements with the classes below are added by prettyprint. */
+/* plain text */
+.pln {
+	color: $black;
+}
+
+@media screen {
+	/* string content */
+	.str {
+		color: #718c00;
+	}
+
+	/* a keyword */
+	.kwd {
+		color: $blue;
+	}
+
+	/* a comment */
+	.com {
+		color: #8e908c;
+	}
+
+	/* a type name */
+	.typ {
+		color: #4271ae;
+	}
+
+	/* a literal value */
+	.lit {
+		color: darken($orange, 10%);
+	}
+
+	/* punctuation */
+	.pun {
+		color: #4d4d4c;
+	}
+
+	/* lisp open bracket */
+	.opn {
+		color: #4d4d4c;
+	}
+
+	/* lisp close bracket */
+	.clo {
+		color: #4d4d4c;
+	}
+
+	/* a markup tag name */
+	.tag {
+		color: #c82829;
+	}
+
+	/* a markup attribute name */
+	.atn {
+		color: #f5871f;
+	}
+
+	/* a markup attribute value */
+	.atv {
+		color: #3e999f;
+	}
+
+	/* a declaration */
+	.dec {
+		color: #f5871f;
+	}
+
+	/* a variable name */
+	.var {
+		color: #c82829;
+	}
+
+	/* a function name */
+	.fun {
+		color: #4271ae;
+	}
+}
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+	.str {
+		color: #006600;
+	}
+
+	.kwd {
+		color: $blue;
+		font-weight: bold;
+	}
+
+	.com {
+		color: #600;
+		font-style: italic;
+	}
+
+	.typ {
+		color: #404;
+		font-weight: bold;
+	}
+
+	.lit {
+		color: #004444;
+	}
+
+	.pun, .opn, .clo {
+		color: #444400;
+	}
+
+	.tag {
+		color: #006;
+		font-weight: bold;
+	}
+
+	.atn {
+		color: #440044;
+	}
+
+	.atv {
+		color: #006600;
+	}
+}
+/* Style */
+pre.prettyprint {
+	//border: 1px solid #cccccc;
+	@include rem(padding, 0.2, 0.4);
+	border-radius: $radius;
+	background: lighten($grey, 0%);
+
+	@include respond-to(handhelds) {
+		white-space: pre-line;
+	}
+
+}
+

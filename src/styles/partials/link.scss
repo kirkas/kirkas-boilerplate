@@ -1,0 +1,23 @@
+@mixin link($color) {
+	color: $color;
+	text-decoration: underline;
+	&:visited {
+		color: darken($color, 15%);
+	}
+
+	&:hover {
+		color: lighten($color, 10%);
+	}
+
+	&:active {
+		color: darken($color, 15%);
+	}
+}
+
+a, .link {
+	@include link($blue);
+	
+	&.no-underline , &.button{
+		text-decoration: none;
+	}
+}

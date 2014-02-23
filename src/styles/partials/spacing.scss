@@ -1,0 +1,43 @@
+@mixin spacing-helper($size) {
+	@include rem(margin-bottom, $size/$line-height);
+	@include rem(margin-top, $size/2/$line-height);	
+}
+
+h1 { @include spacing-helper($h1-font-size); }
+h2 { @include spacing-helper($h2-font-size); }
+h3 { @include spacing-helper($h3-font-size); }
+h4 { @include spacing-helper($h4-font-size); }
+h5 { @include spacing-helper($h5-font-size); }
+h6 { @include spacing-helper($h6-font-size); }
+
+p, ul, pre, label, input, textarea, select, .button-group, .inline-input {
+	@include spacing-helper(1);
+}
+
+// .inline-input {
+// 	input {
+// 		margin-bottom: 0;
+// 		margin-top: 0; 
+// 	}
+// }
+
+section {
+	@include spacing-helper(2);
+}
+
+button, .button, #{$button-input} {
+	
+	@include spacing-helper(1);
+	
+	&.tiny {
+		@include spacing-helper(0.6);
+	}
+	
+	&.small {
+		@include spacing-helper(0.8);
+	}
+	
+	&.large {
+		@include spacing-helper(1.2);
+	}
+}

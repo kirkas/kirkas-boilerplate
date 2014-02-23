@@ -1,50 +1,37 @@
-@mixin placeholder {
-  &::-webkit-input-placeholder {@content}
-  &:-moz-placeholder           {@content}
-  &::-moz-placeholder          {@content}
-  &:-ms-input-placeholder      {@content}  
-}
-
-@mixin form-shadow($color) {
-  &:focus {
-    @include box-shadow(0 0 2px 2px rgba(darken($color, 10%), 0.3));
-  }
-}
-
 @mixin form-theme($color){
   border: 1px solid $color;
   color: $color;
 }
 
-button,
-input,
-select,
-textarea {
-    font-family: inherit;
-    @include rem(font-size, 1);
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
 }
 
-input, textarea {
+#{$text-input}, textarea {
   @include rem(padding, 0.5);
   border-radius: $radius;
   border: 1px solid #aaa;
+  outline: 1px solid transparent;
+  background: $white;
   width: 100%;
-  outline:none;
-  
-  @include rem(margin-bottom, 0.5);
-  &:last-child {margin-bottom: 0;}
   
   @include placeholder {
     font-style: italic;
   }
   
   &:focus {
-    @include form-shadow($blue);
-    border: 1px solid $blue;
+    outline-color: $primary-color;
+    border-color: $primary-color;
   }
   
   &.error {
-    @include form-shadow($red);
+    border-color: $red;
+    &:focus {
+      outline-color: $red;
+    }
     @include form-theme($red);
     @include placeholder {
       color: rgba($red, 0.6);
@@ -52,7 +39,10 @@ input, textarea {
   }
   
   &.success {
-    @include form-shadow($green);
+    border-color: $green;
+    &:focus {
+      outline-color: $green;
+    }
     @include form-theme($green);
     @include placeholder {
       color: rgba($green, 0.6);
@@ -60,7 +50,10 @@ input, textarea {
   }
   
   &.warning {
-    @include form-shadow($orange);
+    border-color: $orange;
+    &:focus {
+      outline-color: $orange;
+    }
     @include form-theme($orange);
     @include placeholder {
       color: rgba($orange, 0.6);
@@ -76,10 +69,17 @@ input, textarea {
   }
 }
 
-.inline-input{
-  @include rem(margin-bottom, 0.5);
-  &:last-child {margin-bottom: 0;}
+label {
+  display: block;
+  input{
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    @include rem(margin-right, 0.3);
+  }
+}
 
+.inline-input{
   button,
   input,
   label,
@@ -88,7 +88,6 @@ input, textarea {
     width: auto;
     display: inline-block;
     vertical-align: middle;
-    margin-bottom: 0;
     @include rem(margin-right, 0.5);
     &:last-child {margin-right: 0;}
   }
