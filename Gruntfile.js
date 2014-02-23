@@ -1,6 +1,17 @@
 module.exports = function(grunt) {
 
   // Project configuration.
+  require('load-grunt-config')(grunt, {
+    config: {
+      pkg: grunt.file.readJSON('package.json'),
+      ref: {
+        src: "src",
+        dist: "dist",
+        tmp: ".tmp"
+      }
+    }
+  });
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -56,7 +67,7 @@ module.exports = function(grunt) {
       },
     
       scripts: {
-        src: '<%= ref.src %>/scripts/*.js'
+        src: '<%= ref.src %>/scripts/**/*.js'
       }
     },
     
